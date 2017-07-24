@@ -7,11 +7,10 @@
 <body>
 
 
-<div class="container">
-	<header>
+<header>
 		<div class="companyLogo">
 			<img src="logo.png" alt="logo weather forecast" style="vertical-align: middle;">
-			<span style="font-size: 22px;">Simple Weather</span>
+			<span style="font-size: 20px;">Simple Weather</span>
 
 			
 		</div>
@@ -21,13 +20,48 @@
 			<li><a href="search.html">Search</a></li>
 			<li><a href="about.html">About</a></li>
 		</ul>
-		
-
-		
 </header>
+
+<div class="container">
+	
+<br>
+
+	<div class="information">
+		<center><input type="text" id="textInput"></center>
+	</div>
+
 
 </div>
 
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=Sarajevo&appid=369a2fb0977095c600cefb502f053b3a';
+	
+		$.getJSON(apiCall, weatherCallback);
+
+		function weatherCallback(weatherData){
+  			var cityName = weatherData.name;
+  			var temp = weatherData.main.temp;
+  			var temperature = temp - 273;
+  			var wind = weatherData.wind.speed
+  			var humidity = weatherData.main.humidity;
+  			var clouds = weatherData.clouds.all;
+  			var weather = weatherData.weather.id;
+
+  			console.log(cityName);
+
+  			$('.cityName').append(cityName);
+  			$('.temperatureDiv').append(Math.floor(temperature) + '&#8451;');
+  			$('.windspeedDiv').append(wind);
+  			$('.humidityDiv').append(humidity + '%');
+  			$('.cloudsDiv').append(clouds + '%');
+
+		}
+	});
+
+	
+</script>
 
 </body>
 </html>
