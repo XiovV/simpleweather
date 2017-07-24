@@ -39,6 +39,16 @@ span{
 	padding-left: 10px;
 	border: 1px solid #4FC08D;
 	border-radius: 25px;
+	color: #4FC08D;
+	font-size: 15px;
+}
+
+#cityName{
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 35px;
+	text-align: center;
+	color: #4FC08D;
 }
 
 .companyLogo{
