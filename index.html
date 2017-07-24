@@ -24,19 +24,31 @@
 
 <div class="container">
 	
-<br>
 
 	<div class="information">
-		<center><input type="text" id="textInput"></center>
+		<center><input type="text" id="textInput" placeholder="Enter a country, city, zip code..." oninput="showResult()"></center>
+
+		<h1 id="cityName"></h1>
 	</div>
 
 
 </div>
 
+
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+
 <script type="text/javascript">
 
+function showResult(){
 	$(document).ready(function(){
-		var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=Sarajevo&appid=369a2fb0977095c600cefb502f053b3a';
+		$('#cityName').html('');
+
+		var searchRes = document.getElementById('textInput').value;
+
+		var apiCall = 'http://api.openweathermap.org/data/2.5/weather?q=' + searchRes + '&appid=369a2fb0977095c600cefb502f053b3a';
+
+
 	
 		$.getJSON(apiCall, weatherCallback);
 
@@ -51,14 +63,24 @@
 
   			console.log(cityName);
 
-  			$('.cityName').append(cityName);
+  			$('#cityName').append(cityName);
   			$('.temperatureDiv').append(Math.floor(temperature) + '&#8451;');
   			$('.windspeedDiv').append(wind);
   			$('.humidityDiv').append(humidity + '%');
   			$('.cloudsDiv').append(clouds + '%');
 
 		}
+
+		$('#textInput').change(function(){
+			console.log('test');
+		});
 	});
+
+
+
+}	
+
+	
 
 	
 </script>
