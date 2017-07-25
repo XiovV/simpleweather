@@ -11,13 +11,11 @@
 		<div class="companyLogo">
 			<img src="logo.png" alt="logo weather forecast" style="vertical-align: middle;">
 			<span style="font-size: 20px;">Simple Weather</span>
-
-			
 		</div>
 
 		<ul class="navLinks">
 			<li><a href="index.html">Home</a></li>	
-			<li><a href="search.html">Search</a></li>
+			<li><a href="https://github.com/XiovV/simpleweather" target="_blank">GitHub</a></li>
 			<li><a href="about.html">About</a></li>
 		</ul>
 </header>
@@ -31,18 +29,48 @@
 		<h1 id="cityName"></h1>
 	</div>
 
+	<br><br>
+
+
+	 
+	<div class="weatherInfo">
+		<div class="temperatureWrap"> 
+			<p id="temperatureP">Temperature</p>
+			<h1 id="temperatureDiv"></h1>
+		</div>
+		
+		<div class="windspeedWrap">
+			<p id="windspeedP">Wind speed</p>
+			<h1 id="windspeedDiv"></h1>
+		</div>
+
+		<div class="humidityWrap"> 
+			<p id="humidityP">Humidity</p>
+			<h1 id="humidityDiv"></h1>
+		</div>
+
+		<div class="cloudsWrap"> 
+			<p id="cloudsP">Clouds</p>
+			<h1 id="cloudsDiv"></h1>
+		</div>
+
+	</div>
 
 </div>
 
-
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 
-
 <script type="text/javascript">
+
 
 function showResult(){
 	$(document).ready(function(){
 		$('#cityName').html('');
+		$('#temperatureDiv').html('');
+		$('#windspeedDiv').html('');
+		$('#humidityDiv').html('');
+		$('#cloudsDiv').html('');
+		
 
 		var searchRes = document.getElementById('textInput').value;
 
@@ -64,19 +92,15 @@ function showResult(){
   			console.log(cityName);
 
   			$('#cityName').append(cityName);
-  			$('.temperatureDiv').append(Math.floor(temperature) + '&#8451;');
-  			$('.windspeedDiv').append(wind);
-  			$('.humidityDiv').append(humidity + '%');
-  			$('.cloudsDiv').append(clouds + '%');
+  			$('#temperatureDiv').append(Math.floor(temperature) + '&deg;C');
+  			$('#windspeedDiv').append(wind + 'm/s');
+  			$('#humidityDiv').append(humidity + '%');
+  			$('#cloudsDiv').append(clouds + '%');
+		
 
 		}
 
-		$('#textInput').change(function(){
-			console.log('test');
-		});
 	});
-
-
 
 }	
 
