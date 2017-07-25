@@ -33,6 +33,39 @@ span{
 	
 }
 
+#temperatureDiv, #windspeedDiv, #humidityDiv, #cloudsDiv{
+	display: inline-block;
+	margin: auto;
+	color: #4FC08D;
+	font-weight: normal;
+	font-size: 50px;
+}
+
+.weatherWrapper{
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.temperatureWrap, .windspeedWrap, .humidityWrap, .cloudsWrap{
+	margin:1px;
+	width:250px;
+	text-align:center;
+	display:inline-block;    
+}
+
+#temperatureDiv, #windspeedDiv, #humidityDiv, #cloudsDiv{
+	margin-left: auto;
+	padding: 0px;
+}
+
+.weatherInfo{
+	width: 100%;	
+	text-align: center;
+	display: inline-block;
+}
+
+
 #textInput{
 	width: 400px;
 	height: 25px;
