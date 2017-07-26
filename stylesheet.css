@@ -113,3 +113,10 @@ ul li a:hover{
 	color: rgba(79,192,141,0.6)
 }
 
+.aboutDiv{
+	margin: 0 auto;
+	width: 50%;
+	text-align: center;
+	margin-top: 70px;
+	color: #4FC08D;
+}
